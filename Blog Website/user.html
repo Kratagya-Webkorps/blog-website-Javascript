@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-2">Blog Post Website</h1>
+      <hr style="border: 2px solid black" />
+    </div>
+    <div id="landingPage" class="container" style="display: block">
+      <nav id="exploreBlock" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button id="addYourBlog" class="btn btn-primary">
+            Add Your Blog
+          </button>
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            id="inlineFormInputGroupUsername2"
+            style="width: fit-content"
+            placeholder="Search by Blogger Name"
+          />
+          <div class="dropdown" >
+            
+            <button
+              class="btn btn-dark dropdown-toggle "
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+              <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/>
+            </svg></button>
+            <ul
+              class="dropdown-menu"
+              style="width: 10px"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <li><button class="btn btn-primary my-2" onclick="profile()">Profile</button></li>
+              <li>
+                <button id="signOut" class="btn btn-dark">Sign Out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="cardBlock" class="container mt-4">
+        <div id="cardBlock1" class="row row-cols-3"></div>
+      </div>
+      <div id="addNewBlog" style="display: none">
+        <section class="p-1 p-md-4">
+          <div class="container">
+            <div class="card border-light-subtle shadow-sm">
+              <div class="row g-0">
+                <div class="col-12 col-md-6 text-bg-primary">
+                  <div
+                    class="d-flex align-items-center justify-content-center h-100"
+                  >
+                    <div class="col-10 col-xl-8 py-3">
+                      <h2 class="h1 mb-4">
+                        Add your thoughts with us to make it inevitable
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="card-body p-1 p-md-2 p-xl-5">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-2">
+                          <h2 class="h3">Add Your Blog Here</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <form id="pubDetails" action="#!">
+                      <div class="row gy-3 gy-md-4 overflow-hidden">
+                        <div class="col-12">
+                          <label for="firstName" class="form-label">
+                            Name
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="publisherName"
+                            value="email@example.com"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label>Title</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="publisherTitle"
+                            placeholder="Enter your Topic"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label>Body of Blog</label>
+                          <textarea
+                            name=""
+                            id="publisherBody"
+                            style="resize: vertical; width: 400px"
+                            rows="2"
+                          ></textarea>
+                        </div>
+                        <div class="col-12">
+                          <label>Any Tags you want to add</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="publisherTags"
+                            placeholder="Enter your Tags"
+                          />
+                        </div>
+
+                        <div class="col-12">
+                          <div id="errorInAddNewBlog"></div>
+                          <div class="d-grid">
+                            <button
+                              id="cancelBlogSubmit"
+                              type="button"
+                              class="btn btn-secondary mt-2"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              id="confirmBlogSubmit"
+                              type="button"
+                              class="btn btn-primary mt-2"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <script src="addBlog.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
